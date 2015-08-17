@@ -47,6 +47,18 @@ class UpdateToDoViewController: UIViewController, UITextFieldDelegate {
     
     
     @IBAction func save(sender: AnyObject) {
-        navigationController?.popViewControllerAnimated(true)
+        
+        let name = textField.text
+        
+        if name.isEmpty {
+            let alertView: UIAlertView = UIAlertView(title: "warning", message: "Your to-do needs a name.", delegate: nil, cancelButtonTitle: "OK")
+            return alertView.show()
+        } else {
+            let realm = Realm()
+            realm.write {
+                item?.name = name
+            }
+            navigationController?.popViewControllerAnimated(true)
+        }
     }
 }
