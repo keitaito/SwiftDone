@@ -10,6 +10,7 @@
 		23390D181B805A6200635BF3 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23390D171B805A6200635BF3 /* Item.swift */; };
 		23390D1A1B805BA700635BF3 /* ToDoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23390D191B805BA700635BF3 /* ToDoCell.swift */; };
 		23390D1C1B805C5E00635BF3 /* AddToDoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23390D1B1B805C5E00635BF3 /* AddToDoViewController.swift */; };
+		233D7A5D1B81B6BC007CC4FE /* UpdateToDoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 233D7A5C1B81B6BC007CC4FE /* UpdateToDoViewController.swift */; };
 		23BDC3CE1B7FBAD7000E21FC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23BDC3CD1B7FBAD7000E21FC /* AppDelegate.swift */; };
 		23BDC3D01B7FBAD7000E21FC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23BDC3CF1B7FBAD7000E21FC /* ViewController.swift */; };
 		23BDC3D31B7FBAD7000E21FC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 23BDC3D11B7FBAD7000E21FC /* Main.storyboard */; };
@@ -33,6 +34,7 @@
 		23390D171B805A6200635BF3 /* Item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		23390D191B805BA700635BF3 /* ToDoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToDoCell.swift; sourceTree = "<group>"; };
 		23390D1B1B805C5E00635BF3 /* AddToDoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddToDoViewController.swift; sourceTree = "<group>"; };
+		233D7A5C1B81B6BC007CC4FE /* UpdateToDoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdateToDoViewController.swift; sourceTree = "<group>"; };
 		23BDC3C81B7FBAD7000E21FC /* SwiftDone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftDone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		23BDC3CC1B7FBAD7000E21FC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		23BDC3CD1B7FBAD7000E21FC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -95,6 +97,7 @@
 				23390D171B805A6200635BF3 /* Item.swift */,
 				23390D191B805BA700635BF3 /* ToDoCell.swift */,
 				23390D1B1B805C5E00635BF3 /* AddToDoViewController.swift */,
+				233D7A5C1B81B6BC007CC4FE /* UpdateToDoViewController.swift */,
 				23BDC3D11B7FBAD7000E21FC /* Main.storyboard */,
 				23BDC3D41B7FBAD7000E21FC /* Images.xcassets */,
 				23BDC3D61B7FBAD7000E21FC /* LaunchScreen.xib */,
@@ -299,6 +302,7 @@
 				23BDC3D01B7FBAD7000E21FC /* ViewController.swift in Sources */,
 				23390D181B805A6200635BF3 /* Item.swift in Sources */,
 				23390D1C1B805C5E00635BF3 /* AddToDoViewController.swift in Sources */,
+				233D7A5D1B81B6BC007CC4FE /* UpdateToDoViewController.swift in Sources */,
 				23BDC3CE1B7FBAD7000E21FC /* AppDelegate.swift in Sources */,
 				23390D1A1B805BA700635BF3 /* ToDoCell.swift in Sources */,
 			);

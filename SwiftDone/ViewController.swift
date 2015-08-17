@@ -14,8 +14,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     @IBOutlet weak var tableView: UITableView!
     
     let realm: Realm = Realm()
-    
     var itemsArray: Results<Item> = Realm().objects(Item).sorted("createdAt", ascending: true)
+    
+    var selection: NSIndexPath?
     
     // to update tableView with updated ItemsArray
     var notificationToken: NotificationToken?
@@ -51,7 +52,16 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         return cell
     }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+    }
 
+    func tableView(tableView: UITableView, willSelectRowAtIndexPath indexPath: NSIndexPath) -> NSIndexPath? {
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        selection = indexPath
+        return indexPath
+    }
 
     // MARK: - Helper methods
     
@@ -73,6 +83,16 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             // Configure View Controller
 //            [vc setManagedObjectContext:self.managedObjectContext];
             
+        } else if segue.identifier == "updateToDoViewController" {
+            let vc: UpdateToDoViewController = segue.destinationViewController as! UpdateToDoViewController
+            
+            if let selection = selection {
+                let item: Item = itemsArray[selection.row]
+                println(item.name)
+                
+                vc.item = item
+                self.selection = nil
+            }
         }
     }
     

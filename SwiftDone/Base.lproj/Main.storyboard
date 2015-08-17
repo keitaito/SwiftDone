@@ -42,6 +42,7 @@
                                         <connections>
                                             <outlet property="doneButton" destination="msC-wh-8Qv" id="p0x-xF-L8U"/>
                                             <outlet property="nameLabel" destination="jTS-hp-Ccx" id="PXk-JI-BwK"/>
+                                            <segue destination="hXE-8f-4YI" kind="show" identifier="updateToDoViewController" id="qXT-8L-ddw"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -120,7 +121,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EKm-YK-e8r" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2033" y="1759"/>
+            <point key="canvasLocation" x="2691" y="1048"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="CgB-8i-RYR">
@@ -156,7 +157,55 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="q8y-Tt-wdt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1221" y="1759"/>
+            <point key="canvasLocation" x="1937" y="1048"/>
+        </scene>
+        <!--Update To Do View Controller-->
+        <scene sceneID="8BP-Qs-7PX">
+            <objects>
+                <viewController id="hXE-8f-4YI" customClass="UpdateToDoViewController" customModule="SwiftDone" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="PR6-zK-RFn"/>
+                        <viewControllerLayoutGuide type="bottom" id="aXp-qj-71m"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="CGM-cw-rdv">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eTq-BI-3uR">
+                                <rect key="frame" x="20" y="84" width="560" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="hXE-8f-4YI" id="cgR-Ou-rAR"/>
+                                </connections>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="eTq-BI-3uR" secondAttribute="trailing" constant="20" id="Dib-wn-Gty"/>
+                            <constraint firstItem="eTq-BI-3uR" firstAttribute="leading" secondItem="CGM-cw-rdv" secondAttribute="leading" constant="20" id="NVH-np-FAn"/>
+                            <constraint firstItem="eTq-BI-3uR" firstAttribute="top" secondItem="PR6-zK-RFn" secondAttribute="bottom" constant="20" id="kJd-LA-kgF"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="LGk-4B-gFF">
+                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="QjW-Xr-7rw">
+                            <connections>
+                                <action selector="cancel:" destination="hXE-8f-4YI" id="txO-08-lDf"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Save" id="N0U-0x-O3n">
+                            <connections>
+                                <action selector="save:" destination="hXE-8f-4YI" id="faj-Hq-vGE"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="textField" destination="eTq-BI-3uR" id="18O-Hz-h0F"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QL7-wT-2lD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1932" y="1802"/>
         </scene>
     </scenes>
 </document>
