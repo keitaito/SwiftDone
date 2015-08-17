@@ -16,7 +16,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     let realm: Realm = Realm()
     
     var itemsArray: Results<Item> = Realm().objects(Item).sorted("createdAt", ascending: true)
-    // somthing fetch result controller
+    
+    // to update tableView with updated ItemsArray
     var notificationToken: NotificationToken?
     
     override func viewDidLoad() {
@@ -24,6 +25,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         // Do any additional setup after loading the view, typically from a nib.
         println(realm)
         
+        // get notification when itemsArray is updated, then reload tableView
         notificationToken = Realm().addNotificationBlock { [unowned self] note, realm in
             self.tableView.reloadData()
         }
@@ -45,16 +47,12 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell: ToDoCell = tableView.dequeueReusableCellWithIdentifier("ToDoCell", forIndexPath: indexPath) as! ToDoCell
         
-//        let object = array[indexPath.row]
-//        cell.textLabel?.text = object.title
-//        cell.detailTextLabel?.text = object.date.description
-        
         self.configureCell(cell, atIndexPath: indexPath)
         
         return cell
     }
 
-    
+
     // MARK: - Helper methods
     
     func configureCell(cell: ToDoCell, atIndexPath indexPath: NSIndexPath) -> Void {
@@ -65,10 +63,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     // MARK: - Navigation
     
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-    // Get the new view controller using segue.destinationViewController.
-    // Pass the selected object to the new view controller.
+
         if segue.identifier == "addToDoViewController" {
             
             let nc: UINavigationController = segue.destinationViewController as! UINavigationController
@@ -81,15 +77,3 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
 }
-
-
-//#pragma mark - Helper methods
-//
-//- (void)configureCell:(TSPToDoCell *)cell atIndexPath:(NSIndexPath *)indexPath {
-//    // Fetch Record
-//    NSManagedObject *record = [self.fetchedResultsController objectAtIndexPath:indexPath];
-//    
-//    // Update Cell
-//    [cell.nameLabel setText:[record valueForKey:@"name"]];
-//    [cell.doneButton setSelected:[[record valueForKey:@"done"] boolValue]];
-//}

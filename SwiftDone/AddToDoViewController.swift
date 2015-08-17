@@ -46,7 +46,7 @@ class AddToDoViewController: UIViewController, UITextFieldDelegate {
         let name: String = textField.text
         
         if name.isEmpty {
-            let alertView: UIAlertView = UIAlertView(title: "warning", message: "failed", delegate: nil, cancelButtonTitle: "OK")
+            let alertView: UIAlertView = UIAlertView(title: "warning", message: "Your to-do needs a name.", delegate: nil, cancelButtonTitle: "OK")
             return alertView.show()
         } else {
             let item = Item()
