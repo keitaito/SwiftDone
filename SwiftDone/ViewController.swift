@@ -63,6 +63,21 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         return indexPath
     }
 
+    func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+        return true
+    }
+    
+    func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        if editingStyle == UITableViewCellEditingStyle.Delete {
+            
+            let itemToDelete = itemsArray[indexPath.row]
+            
+            realm.write {
+                self.realm.delete(itemToDelete)
+            }
+        }
+    }
+    
     // MARK: - Helper methods
     
     func configureCell(cell: ToDoCell, atIndexPath indexPath: NSIndexPath) -> Void {
