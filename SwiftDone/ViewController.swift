@@ -69,6 +69,16 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         let item = itemsArray[indexPath.row]
         cell.nameLabel.text = item.name
         cell.doneButton.selected = item.done
+        
+        cell.doneClousre = {() -> Void in
+            var isDone: Bool = item.done
+            println(isDone)
+            self.realm.write {
+                item.done = !isDone
+                println(item.done)
+            }
+        }
+        
     }
     
     // MARK: - Navigation

@@ -25,19 +25,31 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="WVP-QC-orj" id="tqZ-Dy-1lq">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jTS-hp-Ccx">
-                                                    <rect key="frame" x="8" y="11" width="530" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jTS-hp-Ccx">
+                                                    <rect key="frame" x="20" y="11" width="520" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="msC-wh-8Qv">
-                                                    <rect key="frame" x="546" y="7" width="46" height="30"/>
-                                                    <state key="normal" title="Button">
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="msC-wh-8Qv">
+                                                    <rect key="frame" x="548" y="0.0" width="44" height="43"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="44" id="e4L-uK-ctq"/>
+                                                    </constraints>
+                                                    <state key="normal">
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
                                                 </button>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="msC-wh-8Qv" secondAttribute="trailing" constant="8" id="Olv-qq-Qey"/>
+                                                <constraint firstItem="jTS-hp-Ccx" firstAttribute="top" secondItem="tqZ-Dy-1lq" secondAttribute="top" constant="11" id="bJZ-rj-Mwq"/>
+                                                <constraint firstItem="msC-wh-8Qv" firstAttribute="top" secondItem="tqZ-Dy-1lq" secondAttribute="top" id="eBc-Qe-Nyu"/>
+                                                <constraint firstAttribute="bottom" secondItem="jTS-hp-Ccx" secondAttribute="bottom" constant="11" id="fRt-UM-9pd"/>
+                                                <constraint firstItem="jTS-hp-Ccx" firstAttribute="leading" secondItem="tqZ-Dy-1lq" secondAttribute="leading" constant="20" id="kSY-sm-FHz"/>
+                                                <constraint firstItem="msC-wh-8Qv" firstAttribute="leading" secondItem="jTS-hp-Ccx" secondAttribute="trailing" constant="8" id="mf1-lg-Vse"/>
+                                                <constraint firstAttribute="bottom" secondItem="msC-wh-8Qv" secondAttribute="bottom" id="wSy-MM-PYA"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="doneButton" destination="msC-wh-8Qv" id="p0x-xF-L8U"/>
